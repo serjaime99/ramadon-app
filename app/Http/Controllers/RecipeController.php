@@ -17,4 +17,8 @@ class RecipeController extends Controller
         // 2. sending the data to the view 
         return view('recipes.index', compact('recipes'));
     }
+    public function create()
+    {
+        return view('recipes.create');
+    }
 }

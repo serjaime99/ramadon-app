@@ -5,3 +5,4 @@ use Illuminate\Support\Facades\Route;
 
 
 route::get('/recipes', [RecipeController::class, 'index']);
+Route::get('/recipes/create', [RecipeController::class, 'create']);
