@@ -21,4 +21,19 @@ class RecipeController extends Controller
     {
         return view('recipes.create');
     }
+
+    public function store(Request $request)
+    {
+        // 1. Validation: Force the user to provide a title and content
+        $validated = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+
+        // 2. Save to database using the Model
+        \App\Models\Recipe::create($validated);
+
+        // 3. Redirect the user back to the list so they can see their new recipe
+        return redirect('/recipes');
+    }
 }
