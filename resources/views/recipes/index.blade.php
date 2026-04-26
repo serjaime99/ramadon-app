@@ -11,6 +11,12 @@
 11             <h2>{{ $recipe->title }}</h2>
 12             <p>{{ $recipe->content }}</p>
 13         </div>
+
+            <form action="/recipes/{{ $recipe->id }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
+            </form>
 14     @endforeach
 15 </body>
 16 </html>
